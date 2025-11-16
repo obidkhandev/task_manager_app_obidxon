@@ -1,8 +1,8 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:task_manager/features/task_management/data/models/task_hive_ids.dart';
 
-import '../../../../models/task_hive_ids.dart';
 import '../../domain/entities/task.dart' as domain show Task;
-import '../../domain/entities/priority.dart';
+import 'package:task_manager/core/utils/enums.dart';
 
 enum PriorityModel { low, medium, high }
 enum TaskStatusModel { todo, inProgress, done }

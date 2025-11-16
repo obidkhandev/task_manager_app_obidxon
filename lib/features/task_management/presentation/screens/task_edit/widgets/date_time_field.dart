@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../widgets/custom_date_picker_bottom_sheet.dart';
-import '../../../generated/l10n.dart';
+import 'package:task_manager/features/task_management/presentation/widgets/custom_date_picker_bottom_sheet.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 class DateTimeField extends StatelessWidget {
   const DateTimeField({

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/generated/l10n.dart';
 
-import '../theme/app_colors.dart';
-import '../generated/l10n.dart';
 import 'circular_percent.dart';
 
 class TopProgressCard extends StatelessWidget {

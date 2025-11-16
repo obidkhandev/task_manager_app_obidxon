@@ -19,12 +19,12 @@ Future<void> init() async {
     return ds;
   });
 
-  // Settings service
+  // Settings service (depends on Hive init in TaskLocalDataSource)
   sl.registerSingletonAsync<SettingsService>(() async {
     final s = SettingsService();
     await s.init();
     return s;
-  });
+  }, dependsOn: [TaskLocalDataSource]);
 
   // Repository
   sl.registerSingletonWithDependencies<TaskRepository>(
@@ -40,4 +40,3 @@ Future<void> init() async {
 
   await sl.allReady();
 }
-

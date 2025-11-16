@@ -2,7 +2,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../../../core/utils/constants.dart';
 import '../../domain/entities/task.dart' as domain show Task;
-import '../../domain/entities/priority.dart';
+import 'package:task_manager/core/utils/enums.dart';
 import '../models/task_model.dart';
 
 class TaskLocalDataSource {

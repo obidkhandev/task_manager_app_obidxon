@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/theme/app_colors.dart';
 
-import '../theme/app_colors.dart';
 
 class AnimatedFab extends StatefulWidget {
   const AnimatedFab({super.key, required this.onPressed});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/settings_cubit.dart';
-import '../generated/l10n.dart';
+import 'package:task_manager/bloc/settings_cubit.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -51,4 +51,3 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-

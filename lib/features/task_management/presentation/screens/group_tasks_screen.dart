@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_manager/core/utils/enums.dart';
+import 'package:task_manager/features/task_management/domain/entities/task.dart';
 
 import 'package:task_manager/features/task_management/presentation/bloc/task/task_bloc.dart';
-import '../models/task.dart';
-import '../widgets/fancy_task_card.dart';
-import '../widgets/swipe_to_delete_background.dart';
+import 'package:task_manager/features/task_management/presentation/widgets/fancy_task_card.dart';
+import 'package:task_manager/features/task_management/presentation/widgets/swipe_to_delete_background.dart';
 import 'task_view_screen.dart';
 
 class GroupTasksScreen extends StatefulWidget {

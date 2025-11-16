@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/theme/app_colors.dart';
 
-import '../theme/app_colors.dart';
 
 class BadgePill extends StatelessWidget {
   const BadgePill({super.key, required this.count});

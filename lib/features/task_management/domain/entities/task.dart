@@ -1,4 +1,4 @@
-import 'priority.dart';
+import '../../../../core/utils/enums.dart';
 
 class Task {
   Task({

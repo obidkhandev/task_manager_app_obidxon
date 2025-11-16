@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/core/utils/enums.dart';
+import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
 
-import '../models/task.dart';
-import '../models/task_extensions.dart';
 // Removed localization for simplicity
 
 class GroupSummaryCard extends StatelessWidget {

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:task_manager/core/utils/enums.dart';
+import 'package:task_manager/features/task_management/domain/entities/task.dart';
+import 'package:task_manager/generated/l10n.dart';
+import 'package:task_manager/theme/app_colors.dart';
 
-import '../models/task.dart';
-import '../theme/app_colors.dart';
-import '../models/task_extensions.dart';
-import '../generated/l10n.dart';
+
 
 typedef ToggleComplete = void Function(bool value);
 
@@ -78,15 +79,17 @@ class _FancyTaskCardState extends State<FancyTaskCard> {
   BoxDecoration _gradientDecoration() {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(16),
-      gradient: const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-          Color(0xFFFFF6D5), // subtle yellow
-          Color(0xFFFFE6F3), // subtle pink
-          Color(0xFFE6F7FF), // subtle blue
-        ],
-      ),
+      // gradient: const LinearGradient(
+      //   begin: Alignment.topLeft,
+      //   end: Alignment.bottomRight,
+      //   colors: [
+      //     // Color(0xFFFFF6D5), // subtle yellow
+      //     // Color(0xFFFFE6F3), // subtle pink
+      //     // Color(0xFFE6F7FF), // subtle blue
+      //   ],
+      //
+      // ),
+      color: AppColors.white,
       boxShadow: [
         BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 12, offset: const Offset(0, 4)),
       ],
@@ -122,6 +125,8 @@ class _FancyTaskCardState extends State<FancyTaskCard> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
+        // mainAxisAlignment: MainAxisAlignment.,
+        mainAxisSize: MainAxisSize.min,
         children: [
           const Icon(Icons.access_time, size: 16, color: AppColors.primary),
           const SizedBox(width: 6),

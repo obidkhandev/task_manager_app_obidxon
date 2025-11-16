@@ -45,5 +45,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+    <!-- Local Network privacy for Flutter VM Service (iOS 14+) -->
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>Allows debugging over the local network.</string>
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_dartVmService._tcp</string>
+        <string>_dartObservatory._tcp</string>
+    </array>
 </dict>
 </plist>

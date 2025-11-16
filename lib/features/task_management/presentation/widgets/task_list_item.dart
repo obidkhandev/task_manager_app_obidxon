@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:task_manager/core/utils/enums.dart';
+import 'package:task_manager/features/task_management/domain/entities/task.dart';
 // Removed localization for simplicity
 
-import '../models/task.dart';
 import 'slide_fade_in.dart';
-import '../models/task_extensions.dart';
-import '../generated/l10n.dart';
+import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 class TaskListItem extends StatelessWidget {
   const TaskListItem({

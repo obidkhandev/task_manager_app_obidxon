@@ -1,5 +1,5 @@
 import '../entities/task.dart';
-import '../entities/priority.dart';
+import '../../../../core/utils/enums.dart';
 
 abstract class TaskRepository {
   Future<List<(int, Task)>> getAllTasks();

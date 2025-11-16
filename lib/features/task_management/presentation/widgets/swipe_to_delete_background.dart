@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/generated/l10n.dart';
 
-import '../generated/l10n.dart';
 
 class SwipeToDeleteBackground extends StatelessWidget {
   const SwipeToDeleteBackground({super.key, this.alignment = Alignment.centerRight});

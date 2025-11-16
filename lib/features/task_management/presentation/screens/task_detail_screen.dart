@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../screens/task_view_screen.dart' as legacy;
+import 'package:task_manager/features/task_management/presentation/screens/task_view_screen.dart' as legacy;
 import '../../domain/entities/task.dart';
 
 class TaskDetailScreen extends StatelessWidget {

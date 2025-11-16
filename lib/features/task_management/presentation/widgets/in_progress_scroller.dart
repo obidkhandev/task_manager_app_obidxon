@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/core/utils/enums.dart';
+import 'package:task_manager/features/task_management/domain/entities/task.dart';
 
-import '../models/task.dart';
-import '../theme/app_colors.dart';
-import '../models/task_extensions.dart';
+import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/extensions/task_extensions.dart';
 
 class InProgressScroller extends StatelessWidget {
   const InProgressScroller({

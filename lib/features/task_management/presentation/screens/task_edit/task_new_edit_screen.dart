@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_manager/core/utils/enums.dart';
+import 'package:task_manager/features/task_management/domain/entities/task.dart';
 
 import 'package:task_manager/features/task_management/presentation/bloc/task/task_bloc.dart';
-import '../../models/task.dart';
-import '../../widgets/custom_toast.dart';
-import '../../theme/app_colors.dart';
-import '../../generated/l10n.dart';
-import '../../widgets/slide_fade_in.dart';
-import '../../widgets/quick_action_chip.dart';
+import 'package:task_manager/features/task_management/presentation/widgets/custom_toast.dart';
+import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/generated/l10n.dart';
+import 'package:task_manager/features/task_management/presentation/widgets/slide_fade_in.dart';
+import 'package:task_manager/features/task_management/presentation/widgets/quick_action_chip.dart';
 import 'widgets/status_chip_picker.dart';
 import 'widgets/priority_chip_picker.dart';
 import 'widgets/group_chip_picker.dart';

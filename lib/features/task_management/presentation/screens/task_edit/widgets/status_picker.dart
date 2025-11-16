@@ -1,8 +1,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:task_manager/core/utils/enums.dart';
 
-import '../../../models/task.dart';
-import '../../../models/task_extensions.dart';
+import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
 
 class StatusPicker extends StatelessWidget {
   const StatusPicker({
@@ -54,4 +54,3 @@ class StatusPicker extends StatelessWidget {
     );
   }
 }
-

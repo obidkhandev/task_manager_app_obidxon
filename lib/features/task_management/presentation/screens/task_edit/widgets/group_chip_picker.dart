@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/core/utils/enums.dart';
 
-import '../../../models/task.dart';
-import '../../../models/task_extensions.dart';
-import '../../../generated/l10n.dart';
-import '../../../theme/app_colors.dart';
+import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
+import 'package:task_manager/generated/l10n.dart';
+import 'package:task_manager/theme/app_colors.dart';
 
 class GroupChipPicker extends StatelessWidget {
   const GroupChipPicker({
