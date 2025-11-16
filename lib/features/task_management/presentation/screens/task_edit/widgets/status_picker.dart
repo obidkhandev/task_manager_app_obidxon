@@ -2,7 +2,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/utils/enums.dart';
 
-import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
+import 'package:task_manager/core/extensions/task_extensions.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 class StatusPicker extends StatelessWidget {
   const StatusPicker({
@@ -21,14 +22,14 @@ class StatusPicker extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: Theme.of(context).textTheme.bodyMedium),
+        Text(S.of(context).status, style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(height: 6),
         DropdownButtonHideUnderline(
           child: DropdownButton2<TaskStatus>(
             isExpanded: true,
             value: value,
             items: TaskStatus.values
-                .map((e) => DropdownMenuItem<TaskStatus>(value: e, child: Text(e.label)))
+                .map((e) => DropdownMenuItem<TaskStatus>(value: e, child: Text(_label(context, e))))
                 .toList(),
             onChanged: (v) {
               if (v != null) onChanged(v);
@@ -52,5 +53,17 @@ class StatusPicker extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String _label(BuildContext context, TaskStatus s) {
+    final l = S.of(context);
+    switch (s) {
+      case TaskStatus.todo:
+        return l.toDo;
+      case TaskStatus.inProgress:
+        return l.inProgress;
+      case TaskStatus.done:
+        return l.doneStatus;
+    }
   }
 }

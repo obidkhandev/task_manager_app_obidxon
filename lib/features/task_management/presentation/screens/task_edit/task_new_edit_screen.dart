@@ -5,7 +5,7 @@ import 'package:task_manager/features/task_management/domain/entities/task.dart'
 
 import 'package:task_manager/features/task_management/presentation/bloc/task/task_bloc.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/custom_toast.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 import 'package:task_manager/generated/l10n.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/slide_fade_in.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/quick_action_chip.dart';

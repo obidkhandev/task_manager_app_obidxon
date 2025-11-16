@@ -7,7 +7,7 @@ import 'settings_screen.dart';
 
 import 'package:task_manager/features/task_management/presentation/bloc/task/task_bloc.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/custom_toast.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/top_progress_card.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/in_progress_scroller.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/group_summary_card.dart';

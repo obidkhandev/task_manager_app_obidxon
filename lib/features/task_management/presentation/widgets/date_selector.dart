@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 
 
 class DateSelector extends StatelessWidget {
@@ -90,4 +90,3 @@ class _DatePill extends StatelessWidget {
     );
   }
 }
-

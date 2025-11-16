@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:task_manager/core/services/settings_service.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 import 'package:task_manager/features/task_management/presentation/screens/task_list_screen.dart';
 import 'generated/l10n.dart';
 
 import 'features/task_management/presentation/bloc/task/task_bloc.dart';
-import 'bloc/settings_cubit.dart';
+import 'features/task_management/presentation/bloc/settings/settings_cubit.dart';
 import 'features/task_management/domain/repositories/task_repository.dart';
-import 'services/settings_service.dart';
 import 'injection_container.dart' as di;
-import 'theme/app_colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:task_manager/core/utils/enums.dart';
 import 'package:task_manager/features/task_management/domain/entities/task.dart';
 
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 import 'package:task_manager/core/extensions/task_extensions.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 class InProgressScroller extends StatelessWidget {
   const InProgressScroller({
@@ -63,7 +64,8 @@ class _InProgressCard extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Text(t.group.label, style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                  child: Text(_groupLabel(context, t.group),
+                      style: const TextStyle(fontSize: 12, color: Colors.black54)),
                 ),
                 _categoryIcon(t.group),
               ],
@@ -109,5 +111,21 @@ class _InProgressCard extends StatelessWidget {
 
   Widget _categoryIcon(TaskGroup group) {
     return CircleAvatar(radius: 14, backgroundColor: group.color, child: Icon(group.icon, size: 16, color: Colors.white));
+  }
+}
+
+String _groupLabel(BuildContext context, TaskGroup g) {
+  final s = S.of(context);
+  switch (g) {
+    case TaskGroup.work:
+      return s.work;
+    case TaskGroup.study:
+      return s.study;
+    case TaskGroup.gym:
+      return s.gym;
+    case TaskGroup.personal:
+      return s.personal;
+    case TaskGroup.other:
+      return s.other;
   }
 }

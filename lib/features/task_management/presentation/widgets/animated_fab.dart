@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 
 
 class AnimatedFab extends StatefulWidget {
@@ -35,4 +35,3 @@ class _AnimatedFabState extends State<AnimatedFab> with SingleTickerProviderStat
     );
   }
 }
-

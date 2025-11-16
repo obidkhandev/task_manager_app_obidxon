@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:task_manager/bloc/settings_cubit.dart';
+import 'package:task_manager/features/task_management/presentation/bloc/settings/settings_cubit.dart';
 import 'package:task_manager/generated/l10n.dart';
 
 class SettingsScreen extends StatelessWidget {

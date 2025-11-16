@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:task_manager/core/utils/enums.dart';
 import 'package:task_manager/features/task_management/domain/entities/task.dart';
 import 'package:task_manager/generated/l10n.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 
 
 
@@ -68,7 +68,14 @@ class _FancyTaskCardState extends State<FancyTaskCard> {
               const SizedBox(height: 8),
               _timeBadge(task),
               const SizedBox(height: 8),
-              _statusBadge(task),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _priorityBadge(task.priority),
+                  const SizedBox(width: 8),
+                  _statusBadge(task),
+                ],
+              ),
             ],
           ),
         ),
@@ -131,6 +138,42 @@ class _FancyTaskCardState extends State<FancyTaskCard> {
           const Icon(Icons.access_time, size: 16, color: AppColors.primary),
           const SizedBox(width: 6),
           Text(label, style: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.w600)),
+        ],
+      ),
+    );
+  }
+
+  Widget _priorityBadge(Priority p) {
+    final s = S.of(context);
+    late final String label;
+    late final Color bg;
+    late final Color fg;
+    switch (p) {
+      case Priority.low:
+        label = s.low;
+        bg = const Color(0xFFE8F5E9); // green 50
+        fg = const Color(0xFF2E7D32); // green 800
+        break;
+      case Priority.medium:
+        label = s.medium;
+        bg = const Color(0xFFFFF3E0); // orange 50
+        fg = const Color(0xFFB05A00); // deep orange-ish
+        break;
+      case Priority.high:
+        label = s.high;
+        bg = const Color(0xFFFFEBEE); // red 50
+        fg = const Color(0xFFC62828); // red 800
+        break;
+    }
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(20)),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.flag_outlined, size: 16, color: fg),
+          const SizedBox(width: 6),
+          Text(label, style: TextStyle(color: fg, fontWeight: FontWeight.w600)),
         ],
       ),
     );

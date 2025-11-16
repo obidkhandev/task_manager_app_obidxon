@@ -2,7 +2,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/utils/enums.dart';
 
-import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
+import 'package:task_manager/core/extensions/task_extensions.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 class PriorityPicker extends StatelessWidget {
   const PriorityPicker({
@@ -21,14 +22,14 @@ class PriorityPicker extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: Theme.of(context).textTheme.bodyMedium),
+        Text(S.of(context).priority, style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(height: 6),
         DropdownButtonHideUnderline(
           child: DropdownButton2<Priority>(
             isExpanded: true,
             value: value,
             items: Priority.values
-                .map((e) => DropdownMenuItem<Priority>(value: e, child: Text(e.label)))
+                .map((e) => DropdownMenuItem<Priority>(value: e, child: Text(_label(context, e))))
                 .toList(),
             onChanged: (v) {
               if (v != null) onChanged(v);
@@ -52,5 +53,17 @@ class PriorityPicker extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String _label(BuildContext context, Priority p) {
+    final s = S.of(context);
+    switch (p) {
+      case Priority.low:
+        return s.low;
+      case Priority.medium:
+        return s.medium;
+      case Priority.high:
+        return s.high;
+    }
   }
 }

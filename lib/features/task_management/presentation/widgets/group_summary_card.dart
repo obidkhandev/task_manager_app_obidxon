@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/utils/enums.dart';
-import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
+import 'package:task_manager/core/extensions/task_extensions.dart';
+import 'package:task_manager/generated/l10n.dart';
 
 // Removed localization for simplicity
 
@@ -43,10 +44,12 @@ class GroupSummaryCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(group.label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                  Text(_groupLabel(context, group),
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
                   const SizedBox(height: 2),
                   const SizedBox(height: 2),
-                  Text('$total Tasks', style: const TextStyle(fontSize: 14, color: Colors.black54)),
+                  Text('$total ${S.of(context).tasks}',
+                      style: const TextStyle(fontSize: 14, color: Colors.black54)),
                 ],
               ),
             ),
@@ -86,5 +89,19 @@ class GroupSummaryCard extends StatelessWidget {
 
   (Color, IconData) _iconStyle(TaskGroup g) => (g.color, g.icon);
 
-  String _groupLabel(TaskGroup g) => g.label;
+  String _groupLabel(BuildContext context, TaskGroup g) {
+    final s = S.of(context);
+    switch (g) {
+      case TaskGroup.work:
+        return s.work;
+      case TaskGroup.study:
+        return s.study;
+      case TaskGroup.gym:
+        return s.gym;
+      case TaskGroup.personal:
+        return s.personal;
+      case TaskGroup.other:
+        return s.other;
+    }
+  }
 }

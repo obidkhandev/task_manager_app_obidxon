@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/generated/l10n.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 
 
 enum StatusFilter { all, todo, inProgress, completed }
@@ -22,7 +23,7 @@ class StatusFilterTabs extends StatelessWidget {
       child: Row(
         children: [
           _Tab(
-            label: 'All',
+            label: S.of(context).all,
             selected: value == StatusFilter.all,
             selectedColor: AppColors.primary,
             unselectedBg: AppColors.statusTodoBg,
@@ -30,7 +31,7 @@ class StatusFilterTabs extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           _Tab(
-            label: 'To do',
+            label: S.of(context).toDo,
             selected: value == StatusFilter.todo,
             selectedColor: AppColors.primary,
             unselectedBg: AppColors.statusTodoBg,
@@ -38,7 +39,7 @@ class StatusFilterTabs extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           _Tab(
-            label: 'In Progress',
+            label: S.of(context).inProgress,
             selected: value == StatusFilter.inProgress,
             selectedColor: AppColors.primary,
             unselectedBg: AppColors.statusInProgressBg,
@@ -46,7 +47,7 @@ class StatusFilterTabs extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           _Tab(
-            label: 'Completed',
+            label: S.of(context).completed,
             selected: value == StatusFilter.completed,
             selectedColor: AppColors.primary,
             unselectedBg: AppColors.statusDoneBg,

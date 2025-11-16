@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/utils/enums.dart';
 
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 import 'package:task_manager/generated/l10n.dart';
 
 class PriorityChipPicker extends StatelessWidget {

@@ -5,7 +5,7 @@ import 'package:task_manager/features/task_management/domain/entities/task.dart'
 // Removed localization for simplicity
 
 import 'slide_fade_in.dart';
-import 'package:task_manager/features/task_management/data/models/task_extensions.dart';
+import 'package:task_manager/core/extensions/task_extensions.dart';
 import 'package:task_manager/generated/l10n.dart';
 
 class TaskListItem extends StatelessWidget {
@@ -44,7 +44,7 @@ class TaskListItem extends StatelessWidget {
           title: Text(task.title, style: textStyle),
           subtitle: Text('${S.of(context).created(date)} • ${_priorityLabel(context, task.priority)} • ${_groupLabel(context, task.group)}'),
           trailing: IconButton(
-            tooltip: 'Delete',
+            tooltip: S.of(context).delete,
             icon: const Icon(Icons.delete_outline),
             onPressed: onDelete,
           ),

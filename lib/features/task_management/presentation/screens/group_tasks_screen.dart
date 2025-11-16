@@ -6,6 +6,7 @@ import 'package:task_manager/features/task_management/domain/entities/task.dart'
 import 'package:task_manager/features/task_management/presentation/bloc/task/task_bloc.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/fancy_task_card.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/swipe_to_delete_background.dart';
+import 'package:task_manager/generated/l10n.dart';
 import 'task_view_screen.dart';
 
 class GroupTasksScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _GroupTasksScreenState extends State<GroupTasksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_groupLabel(widget.group))),
+      appBar: AppBar(title: Text(_groupLabel(context, widget.group))),
       body: BlocBuilder<TaskBloc, TaskState>(
         builder: (context, state) {
           if (state.status == TaskListStatus.loading) {
@@ -50,12 +51,12 @@ class _GroupTasksScreenState extends State<GroupTasksScreen> {
                   controller: _searchController,
                   onChanged: (v) => setState(() => _query = v.trim()),
                   decoration: InputDecoration(
-                    hintText: 'Search tasks',
+                    hintText: S.of(context).tasks,
                     prefixIcon: const Icon(Icons.search),
                     suffixIcon: _query.isEmpty
                         ? null
                         : IconButton(
-                            tooltip: 'Clear',
+                            tooltip: S.of(context).clear,
                             icon: const Icon(Icons.close),
                             onPressed: () {
                               _searchController.clear();
@@ -74,7 +75,7 @@ class _GroupTasksScreenState extends State<GroupTasksScreen> {
               ),
               const SizedBox(height: 12),
               if (filtered.isEmpty)
-                const Expanded(child: Center(child: Text('No matching tasks')))
+                Expanded(child: Center(child: Text(S.of(context).noTasksYet)))
               else
                 Expanded(
                   child: ListView.builder(
@@ -108,18 +109,19 @@ class _GroupTasksScreenState extends State<GroupTasksScreen> {
     );
   }
 
-  String _groupLabel(TaskGroup g) {
+  String _groupLabel(BuildContext context, TaskGroup g) {
+    final s = S.of(context);
     switch (g) {
       case TaskGroup.work:
-        return 'Work';
+        return s.work;
       case TaskGroup.study:
-        return 'Study';
+        return s.study;
       case TaskGroup.gym:
-        return 'Gym';
+        return s.gym;
       case TaskGroup.personal:
-        return 'Personal';
+        return s.personal;
       case TaskGroup.other:
-        return 'Other';
+        return s.other;
     }
   }
 
@@ -195,13 +197,13 @@ class _StatusFilterBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: [
-          pill('All', _Filter.all),
+          pill(S.of(context).all, _Filter.all),
           const SizedBox(width: 8),
-          pill('To do', _Filter.todo),
+          pill(S.of(context).toDo, _Filter.todo),
           const SizedBox(width: 8),
-          pill('In Progress', _Filter.inProgress),
+          pill(S.of(context).inProgress, _Filter.inProgress),
           const SizedBox(width: 8),
-          pill('Completed', _Filter.done),
+          pill(S.of(context).completed, _Filter.done),
         ],
       ),
     );

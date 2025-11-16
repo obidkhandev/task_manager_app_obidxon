@@ -6,7 +6,7 @@ import 'package:task_manager/features/task_management/domain/entities/task.dart'
 
 import 'package:task_manager/features/task_management/presentation/bloc/task/task_bloc.dart';
 import 'task_edit/task_new_edit_screen.dart';
-import 'package:task_manager/theme/app_colors.dart';
+import 'package:task_manager/core/theme/app_colors.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/slide_fade_in.dart';
 import 'package:task_manager/features/task_management/presentation/widgets/circular_percent.dart';
 import 'task_edit/widgets/status_chip_picker.dart';
@@ -74,7 +74,7 @@ class TaskViewScreen extends StatelessWidget {
         builder: (context, state) {
           final entry = state.tasks.where((e) => e.$1 == keyId).toList();
           if (entry.isEmpty) {
-            return const Center(child: Text('Task not found'));
+            return Center(child: Text(S.of(context).somethingWentWrong));
           }
           final task = entry.first.$2;
           final created = DateFormat.yMMMd().add_Hm().format(task.createdAt);
@@ -126,7 +126,7 @@ class TaskViewScreen extends StatelessWidget {
                                 children: [
                                   const Icon(Icons.folder_outlined, size: 18, color: AppColors.grey),
                                   const SizedBox(width: 6),
-                                  Text('Group: ${_groupLabel(context, task.group)}',
+                                  Text('${S.of(context).group}: ${_groupLabel(context, task.group)}',
                                       style: const TextStyle(color: Colors.black87)),
                                   const Icon(Icons.chevron_right, size: 18, color: AppColors.grey),
                                 ],
@@ -349,7 +349,7 @@ class TaskViewScreen extends StatelessWidget {
                           Text(
                             task.description?.isNotEmpty == true
                                 ? task.description!
-                                : 'No description',
+                                : S.of(context).noDescription,
                             style: const TextStyle(fontSize: 15),
                           ),
                         ],
